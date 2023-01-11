@@ -34,7 +34,7 @@ AND DATEPART(mm, MONTH) = 4
 --I have crossed checked with Excel Pivot and still showing zero. 
 
 
---3. How many new mortgages in segment ì4-Accumulators[45-54]î only in 2016?
+--3. How many new mortgages in segment ‚Äú4-Accumulators[45-54]‚Äù only in 2016?
 
 SELECT COUNT(*) as Num_of_New_Mortgages 
 FROM [SQL Mortgages]..MTG_CUST$
@@ -113,3 +113,15 @@ ON m.Finadvisor = f.FinAdvID
 INNER JOIN [SQL Mortgages]..Region$ r 
 ON f.Province = r.Province
 GROUP BY r.Region
+
+
+5/
+
+--Importing the data into SQL server is not working and has to do from outside 
+--Converting the date into The conversion of a varchar data type to a datetime data type resulted in an out-of-range value.
+--Tried use STR_TO_DATE to convert into date format but not working: 
+--'STR_TO_DATE' is not a recognized built-in function name.
+--CONVERT 
+--And DATE_FORMAT but its not working. 
+--Removing of 2451-12-21 00:00:00.000 from the output data.  
+--Converting the amount value in million and also removing the numbers after the decimals
